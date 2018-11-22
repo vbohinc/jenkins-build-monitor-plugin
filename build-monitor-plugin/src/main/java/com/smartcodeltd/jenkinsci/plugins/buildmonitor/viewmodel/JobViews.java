@@ -3,6 +3,8 @@ package com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel;
 import com.smartcodeltd.jenkinsci.plugins.buildmonitor.facade.StaticJenkinsAPIs;
 import com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.features.*;
 import com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.features.headline.HeadlineConfig;
+import com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.features.highlight.HighlightStaleBuildConfig;
+import com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.features.highlight.HighlightStaleBuilds;
 import hudson.model.Job;
 import org.jenkinsci.plugins.workflow.job.WorkflowJob;
 
@@ -36,6 +38,7 @@ public class JobViews {
         viewFeatures.add(new HasHeadline(new HeadlineConfig(config.shouldDisplayCommitters())));
         viewFeatures.add(new KnowsLastCompletedBuildDetails());
         viewFeatures.add(new KnowsCurrentBuildsDetails());
+        viewFeatures.add(new HighlightStaleBuilds(new HighlightStaleBuildConfig(config.shouldHighlightStaleBuilds(), config.getOlderThan())));
 
         if (jenkins.hasPlugin(Claim)) {
             viewFeatures.add(new CanBeClaimed());

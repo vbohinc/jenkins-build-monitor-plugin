@@ -74,14 +74,22 @@
     <f:entry title="${%Display committers}" help="${descriptor.getHelpFile('displayCommitters')}">
       <f:checkbox id="displayCommitters" field="displayCommitters" />
     </f:entry>
-    
+
     <f:entry title="${%Failure Analyzer Plugin: Field to display}" help="${descriptor.getHelpFile('buildFailureAnalyzerDisplayedField')}">
-          <select name="buildFailureAnalyzerDisplayedField" class="setting-input">
-			<f:option value="Name" selected="${it.currentbuildFailureAnalyzerDisplayedField()=='Name'}">${%Name}</f:option>
-			<f:option value="Description" selected="${it.currentbuildFailureAnalyzerDisplayedField()=='Description'}">${%Description}</f:option>
-			<f:option value="None" selected="${it.currentbuildFailureAnalyzerDisplayedField()=='None'}">${%None}</f:option>
-          </select>
-        </f:entry>
+      <select name="buildFailureAnalyzerDisplayedField" class="setting-input">
+        <f:option value="Name" selected="${it.currentbuildFailureAnalyzerDisplayedField()=='Name'}">${%Name}</f:option>
+        <f:option value="Description" selected="${it.currentbuildFailureAnalyzerDisplayedField()=='Description'}">${%Description}</f:option>
+        <f:option value="None" selected="${it.currentbuildFailureAnalyzerDisplayedField()=='None'}">${%None}</f:option>
+      </select>
+    </f:entry>
+
+    <f:entry title="${%Highlight stale builds}" help="${descriptor.getHelpFile('highlightStaleBuilds')}">
+      <f:checkbox id="highlightStaleBuilds" field="highlightStaleBuilds" />
+    </f:entry>
+
+    <f:entry title="${%Older than}" help="${descriptor.getHelpFile('olderThan')}">
+      <f:number id="olderThan" field="olderThan" value="30"/>
+    </f:entry>
 
   </f:section>
 
