@@ -87,8 +87,8 @@
       <f:checkbox id="highlightStaleBuilds" field="highlightStaleBuilds" />
     </f:entry>
 
-    <f:entry title="${%Older than}" help="${descriptor.getHelpFile('olderThan')}">
-      <f:number id="olderThan" field="olderThan" value="30"/>
+    <f:entry title="${%Stale if older than}" help="${descriptor.getHelpFile('staleIfOlderThan')}">
+      <f:number id="staleIfOlderThan" field="staleIfOlderThan" default="30"/>
     </f:entry>
 
   </f:section>

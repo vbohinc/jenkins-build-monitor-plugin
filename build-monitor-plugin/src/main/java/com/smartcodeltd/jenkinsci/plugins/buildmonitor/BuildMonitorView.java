@@ -102,8 +102,8 @@ public class BuildMonitorView extends ListView {
     }
 
     @SuppressWarnings("unused") // used in the configure-entries.jelly form
-    public int currentOlderThan() {
-        return currentConfig().getOlderThan();
+    public int getStaleIfOlderThan() {
+        return currentConfig().getStaleIfOlderThan();
     }
 
     private static final BuildMonitorInstallation installation = new BuildMonitorInstallation();
@@ -132,7 +132,7 @@ public class BuildMonitorView extends ListView {
             currentConfig().setDisplayCommitters(json.optBoolean("displayCommitters", true));
             currentConfig().setBuildFailureAnalyzerDisplayedField(req.getParameter("buildFailureAnalyzerDisplayedField"));
             currentConfig().setHighlightStaleBuilds(json.optBoolean("highlightStaleBuilds", true));
-            currentConfig().setOlderThan(json.optInt("olderThan", 30));
+            currentConfig().setStaleIfOlderThan(json.optInt("staleIfOlderThan", 30));
 
             try {
                 currentConfig().setOrder(orderIn(requestedOrdering));

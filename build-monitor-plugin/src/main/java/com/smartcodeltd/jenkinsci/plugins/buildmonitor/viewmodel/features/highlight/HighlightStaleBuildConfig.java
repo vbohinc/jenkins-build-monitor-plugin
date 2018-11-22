@@ -2,10 +2,10 @@ package com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.features.highl
 
 public class HighlightStaleBuildConfig {
     public final boolean highlightStaleBuilds;
-    public final int olderThan;
+    public final int staleIfOlderThan;
 
-    public HighlightStaleBuildConfig(boolean highlightStaleBuilds, int olderThan) {
+    public HighlightStaleBuildConfig(boolean highlightStaleBuilds, int staleIfOlderThan) {
         this.highlightStaleBuilds = highlightStaleBuilds;
-        this.olderThan = olderThan;
+        this.staleIfOlderThan = staleIfOlderThan;
     }
 }

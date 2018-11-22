@@ -1,0 +1,7 @@
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+    <div>
+        <p>
+            The number of days before a build is determined to be stale.
+        </p>
+    </div>
+</j:jelly>

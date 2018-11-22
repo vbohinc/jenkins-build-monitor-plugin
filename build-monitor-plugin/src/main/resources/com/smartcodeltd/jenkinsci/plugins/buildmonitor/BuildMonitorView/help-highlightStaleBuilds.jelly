@@ -1,0 +1,7 @@
+<j:jelly xmlns:j="jelly:core" xmlns:f="/lib/form">
+<div>
+    <p>
+        If checked the build monitor will change the colour of builds that are older than X days.
+    </p>
+</div>
+</j:jelly>
