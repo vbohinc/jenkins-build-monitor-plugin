@@ -13,7 +13,7 @@ public class Config {
     private boolean displayCommitters;
     private BuildFailureAnalyzerDisplayedField buildFailureAnalyzerDisplayedField;
     private boolean highlightStaleBuilds;
-    private int olderThan;
+    private int staleIfOlderThan;
 
     public static Config defaultConfig() {
         return new Config();
@@ -59,12 +59,12 @@ public class Config {
         this.highlightStaleBuilds = flag;
     }
 
-    public int getOlderThan() {
-        return getOrElse(olderThan, 30);
+    public int getStaleIfOlderThan() {
+        return getOrElse(staleIfOlderThan, 30);
     }
 
-    public void setOlderThan(int olderThan) {
-        this.olderThan = olderThan;
+    public void setStaleIfOlderThan(int staleIfOlderThan) {
+        this.staleIfOlderThan = staleIfOlderThan;
     }
 
     @Override

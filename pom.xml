@@ -19,7 +19,7 @@
     </parent>
 
     <artifactId>build-monitor</artifactId>
-    <version>1.12-SNAPSHOT</version>
+    <version>1.13-OC-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>Build Monitor</name>
