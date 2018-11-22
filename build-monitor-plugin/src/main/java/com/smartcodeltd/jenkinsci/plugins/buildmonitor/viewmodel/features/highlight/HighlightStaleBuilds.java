@@ -6,7 +6,7 @@ import com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.duration.Durati
 import com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.features.Feature;
 import org.codehaus.jackson.annotate.JsonProperty;
 
-public class HighlightStaleBuilds implements Feature {
+public class HighlightStaleBuilds implements Feature<HighlightStaleBuilds.HighlightStaleBuild> {
     private JobView job;
     private HighlightStaleBuildConfig config;
 

@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import com.smartcodeltd.jenkinsci.plugins.buildmonitor.facade.RelativeLocation;
 import com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.duration.Duration;
 import com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.features.Feature;
+import com.smartcodeltd.jenkinsci.plugins.buildmonitor.viewmodel.features.highlight.HighlightStaleBuilds;
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import hudson.model.Job;
 import hudson.model.Result;
@@ -94,6 +95,11 @@ public class JobView {
 
     public boolean isDisabled() {
         return ! (isJobBuildable() || isJobExternal());
+    }
+
+    public boolean isStale() {
+        HighlightStaleBuilds staleBuildsFeature = which(HighlightStaleBuilds.class) ;
+        return staleBuildsFeature.of(this).asJson().isStale();
     }
 
     private boolean isJobBuildable() {

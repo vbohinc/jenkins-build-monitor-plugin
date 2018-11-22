@@ -38,7 +38,8 @@ public class JobViews {
         viewFeatures.add(new HasHeadline(new HeadlineConfig(config.shouldDisplayCommitters())));
         viewFeatures.add(new KnowsLastCompletedBuildDetails());
         viewFeatures.add(new KnowsCurrentBuildsDetails());
-        viewFeatures.add(new HighlightStaleBuilds(new HighlightStaleBuildConfig(config.shouldHighlightStaleBuilds(), config.getOlderThan())));
+        viewFeatures.add(new HighlightStaleBuilds(new HighlightStaleBuildConfig(config.shouldHighlightStaleBuilds(),
+                                                                                config.getOlderThan())));
 
         if (jenkins.hasPlugin(Claim)) {
             viewFeatures.add(new CanBeClaimed());
