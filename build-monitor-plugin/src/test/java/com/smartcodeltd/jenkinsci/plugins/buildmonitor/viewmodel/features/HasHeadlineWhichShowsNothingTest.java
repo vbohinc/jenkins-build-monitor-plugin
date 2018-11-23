@@ -22,7 +22,7 @@ public class HasHeadlineWhichShowsNothingTest {
     // --
 
     private Feature hasHeadlineThatShowsCommitters() {
-        return new HasHeadline(new HeadlineConfig(true));
+        return new HasHeadline(new HeadlineConfig(true, false, 0));
     }
 
     private String headlineOf(JobView job) {

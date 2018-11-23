@@ -35,7 +35,7 @@ public class JobViews {
         List<Feature> viewFeatures = newArrayList();
 
         // todo: a more elegant way of assembling the features would be nice
-        viewFeatures.add(new HasHeadline(new HeadlineConfig(config.shouldDisplayCommitters())));
+        viewFeatures.add(new HasHeadline(new HeadlineConfig(config.shouldDisplayCommitters(), config.shouldHighlightStaleBuilds(), config.getStaleIfOlderThan())));
         viewFeatures.add(new KnowsLastCompletedBuildDetails());
         viewFeatures.add(new KnowsCurrentBuildsDetails());
         viewFeatures.add(new HighlightStaleBuilds(new HighlightStaleBuildConfig(config.shouldHighlightStaleBuilds(), config.getStaleIfOlderThan())));

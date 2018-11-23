@@ -21,7 +21,7 @@
                 <a title="{{project.name}}"
                    href="{{project.url}}">{{project.name}}</a>
             </h2>
-            <ul class="details">
+            <ul class="details" data-ng-style="{ background-color: {{ project.headline }}.indexOf('STALE') == 0 ? 'hotpink' : '' }">
                 <li data-ng-show="!  project.claim.active">{{ project.headline }}</li>
                 <li data-ng-show="!! project.lastCompletedBuild.description" class="build-description description-setter-plugin"
                     ng-bind-html="project.lastCompletedBuild.description" />
